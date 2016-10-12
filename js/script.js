@@ -46,12 +46,22 @@ window.onload = function() {
 
             for (var i = 0; i < keys.length; i++) {
                 var key = keys[i];
-                var pageSectionId = document.getElementById('listCount');
-                var paragraph = document.createElement('P');
-                var paragraphContent = document.createTextNode(keys[i] + ' ' + frequencyDictionary[key]);
+                var tableBody = document.getElementById('listCount');
+                var tableRow = document.createElement('tr');
+                var wordCell = document.createElement('td');
+                var countCell = document.createElement('td');
 
-                paragraph.appendChild(paragraphContent);
-                pageSectionId.appendChild(paragraph);
+
+                var word = document.createTextNode(keys[i]);
+                var count = document.createTextNode(frequencyDictionary[key]);
+
+                tableBody.appendChild(tableRow);
+                tableRow.appendChild(wordCell);
+                tableRow.appendChild(countCell);
+
+                wordCell.appendChild(word);
+                countCell.appendChild(count);
+
             }
         }
 
