@@ -13,29 +13,36 @@
 
 <body>
     <div class="container">
-        <div class="content-main row">
+        <div class="row">
             <div class="col-lg-12">
                 <h1>Ever-expanding word counter</h1>
             </div>
+
             <div class="col-lg-6">
                 <h4>Copy and paste the text you want to analyse</h4>
                 <div>
-                    <textarea id="pastedText" rows="15" cols="75" placeholder="Paste text here..."></textarea>
+                    <textarea id="pastedText" rows="15" style="width:100%" placeholder="Paste text here..."></textarea>
                 </div>
                 <br>
-                <button type="button" id="analyse">Analyse text</button>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <button type="button" class="btn btn-default btn-block" id="analyse">Analyse text</button>
+                        <button type="button" class="btn btn-danger btn-block" id="empty">Empty</button>
+                    </div>
+                </div>
                 <br><br>
             </div>
-            <div class="col-lg-6 text-center">
-              <div id="poem">
-                <p>There is a place where the sidewalk ends<br /> And before the street begins,<br /> And there the grass grows soft and white,<br /> And there the sun burns crimson bright,<br /> And there the moon-bird rests from his flight<br /> To cool
-                    in the peppermint wind.</p>
+            <div class="col-lg-6 text-center" ;>
+                <h4>Sample text, click to copy</h4>
+                <div id="poem">
+                    <p>There is a place where the sidewalk ends<br /> And before the street begins,<br /> And there the grass grows soft and white,<br /> And there the sun burns crimson bright,<br /> And there the moon-bird rests from his flight<br /> To
+                        cool in the peppermint wind.</p>
 
-                <p>Let us leave this place where the smoke blows black<br /> And the dark street winds and bends.<br /> Past the pits where the asphalt flowers grow<br /> We shall walk with a walk that is measured and slow,<br /> And watch where the chalk-white
-                    arrows go<br /> To the place where the sidewalk ends.</p>
+                    <p>Let us leave this place where the smoke blows black<br /> And the dark street winds and bends.<br /> Past the pits where the asphalt flowers grow<br /> We shall walk with a walk that is measured and slow,<br /> And watch where the
+                        chalk-white arrows go<br /> To the place where the sidewalk ends.</p>
 
-                <p>Yes we'll walk with a walk that is measured and slow,<br /> And we'll go where the chalk-white arrows go,<br /> For the children, they mark, and the children, they know<br /> The place where the sidewalk ends.</p>
-              </div>
+                    <p>Yes we'll walk with a walk that is measured and slow,<br /> And we'll go where the chalk-white arrows go,<br /> For the children, they mark, and the children, they know<br /> The place where the sidewalk ends.</p>
+                </div>
             </div>
         </div>
         <div class="container">

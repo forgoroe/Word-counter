@@ -1,6 +1,7 @@
 var text;
 var keys = [];
 var frequencyDictionary = {};
+var poemText;
 
 window.onload = function() {
 
@@ -12,6 +13,10 @@ window.onload = function() {
             printResults();
         }
     };
+
+    document.getElementById('empty').onclick = function(){
+      document.getElementById('pastedText').value = '';
+    }
 
     function countWords(textArg) {
         frequencyDictionary = {};
@@ -65,6 +70,17 @@ window.onload = function() {
             }
         }
 
+    }
+
+    document.getElementById('poem').onclick = function() {
+        var copiedText = '';
+        poemText = document.getElementById('poem').getElementsByTagName('p');
+
+        for (i = 0; i < poemText.length; i++) {
+            copiedText += poemText[i].innerText;
+        }
+
+        document.getElementById('pastedText').value = copiedText;
     }
 
 }
