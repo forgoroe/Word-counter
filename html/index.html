@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Word Counter</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
@@ -19,7 +20,7 @@
             </div>
 
             <div class="col-lg-6">
-                <h4>Copy and paste the text you want to analyse</h4>
+                <h4>Copy and paste the text you want to analyse, or choose a file to upload: <h5><input type="file" onchange="handleFiles()" id="uploadedFile"></h5></h4>
                 <div>
                     <textarea id="pastedText" rows="15" style="width:100%" placeholder="Paste text here..."></textarea>
                 </div>
@@ -33,7 +34,8 @@
                 <br><br>
             </div>
             <div class="col-lg-6 text-center" ;>
-                <h4>Sample text, click to copy</h4>
+                <h4><i class="fa fa-clipboard" aria-hidden="true"></i> Sample text, click to copy
+</h4>
                 <div id="poem">
                     <p>There is a place where the sidewalk ends<br /> And before the street begins,<br /> And there the grass grows soft and white,<br /> And there the sun burns crimson bright,<br /> And there the moon-bird rests from his flight<br /> To
                         cool in the peppermint wind.</p>

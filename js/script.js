@@ -14,9 +14,45 @@ window.onload = function() {
         }
     };
 
-    document.getElementById('empty').onclick = function(){
-      document.getElementById('pastedText').value = '';
-    }
+    document.getElementById('empty').onclick = function() {
+        document.getElementById('pastedText').value = '';
+        var listCountDiv = document.getElementById('listCount');
+        while (listCountDiv.firstChild) {
+            listCountDiv.removeChild(listCountDiv.firstChild);
+        }
+
+        var tableBody = document.getElementById('listCount');
+        var tableRow = document.createElement('tr');
+        var wordCell = document.createElement('td');
+        var countCell = document.createElement('td');
+
+        var word = document.createTextNode('...');
+        var count = document.createTextNode('...');
+
+        tableBody.appendChild(tableRow);
+        tableRow.appendChild(wordCell);
+        tableRow.appendChild(countCell);
+        wordCell.appendChild(word);
+        countCell.appendChild(count);
+    };
+
+    document.getElementById('uploadedFile').onchange = function(){
+      if (window.File && window.FileReader && window.FileList && window.Blob){ //check if supported
+        var file = document.getElementById('uploadedFile').files[0];
+        if(file){
+          var reader = new FileReader();
+          reader.onload = function(e){
+            var contents = e.target.result;
+            alert("Uploaded file " + file.name);
+          }
+        //  reader.readAsText(file);
+        } else{
+          alert("failed to load file");
+        }
+      } else{
+        alert('The file APIs are not fully supported by your browser.')
+      }
+    };
 
     function countWords(textArg) {
         frequencyDictionary = {};
@@ -44,7 +80,7 @@ window.onload = function() {
     function printResults() {
         var listCountDiv = document.getElementById('listCount');
 
-        if (listCountDiv.hasChildNodes()) { //
+        if (listCountDiv.hasChildNodes()) {
             while (listCountDiv.firstChild) {
                 listCountDiv.removeChild(listCountDiv.firstChild);
             }
