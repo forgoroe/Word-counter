@@ -20,7 +20,7 @@
             </div>
 
             <div class="col-lg-6">
-                <h4>Copy and paste the text you want to analyse, or choose a file to upload: <h5><input type="file" onchange="handleFiles()" id="uploadedFile"></h5></h4>
+                <h4>Copy and paste the text you want to analyse, or choose a '.txt' file to upload: <h5><input type="file" accept="text/plain" onchange="openFile(event)" id="uploadedFile"></h5></h4>
                 <div>
                     <textarea id="pastedText" rows="15" style="width:100%" placeholder="Paste text here..."></textarea>
                 </div>

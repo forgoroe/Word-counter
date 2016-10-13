@@ -5,6 +5,18 @@ var poemText;
 
 window.onload = function() {
 
+  openFile = function(event) {
+
+  var input = event.target;
+  var reader = new FileReader();
+  reader.readAsText(input.files[0]);
+  reader.onload = function() {
+      var text = reader.result;
+      document.getElementById('pastedText').value = text;
+  };
+  document.getElementById('uploadedFile').value = null;
+};
+
     document.getElementById('analyse').onclick = function() {
         var text = document.getElementById('pastedText').value;
         text = text.toLowerCase();
@@ -36,23 +48,7 @@ window.onload = function() {
         countCell.appendChild(count);
     };
 
-    document.getElementById('uploadedFile').onchange = function(){
-      if (window.File && window.FileReader && window.FileList && window.Blob){ //check if supported
-        var file = document.getElementById('uploadedFile').files[0];
-        if(file){
-          var reader = new FileReader();
-          reader.onload = function(e){
-            var contents = e.target.result;
-            alert("Uploaded file " + file.name);
-          }
-        //  reader.readAsText(file);
-        } else{
-          alert("failed to load file");
-        }
-      } else{
-        alert('The file APIs are not fully supported by your browser.')
-      }
-    };
+
 
     function countWords(textArg) {
         frequencyDictionary = {};
