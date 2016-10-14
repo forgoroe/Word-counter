@@ -5,17 +5,17 @@ var poemText;
 
 window.onload = function() {
 
-  openFile = function(event) {
+    openFile = function(event) {
 
-  var input = event.target;
-  var reader = new FileReader();
-  reader.readAsText(input.files[0]);
-  reader.onload = function() {
-      var text = reader.result;
-      document.getElementById('pastedText').value = text;
-  };
-  document.getElementById('uploadedFile').value = null;
-};
+        var input = event.target;
+        var reader = new FileReader();
+        reader.readAsText(input.files[0]);
+        reader.onload = function() {
+            var text = reader.result;
+            document.getElementById('pastedText').value = text;
+        };
+        document.getElementById('uploadedFile').value = null;
+    };
 
     document.getElementById('analyse').onclick = function() {
         var text = document.getElementById('pastedText').value;

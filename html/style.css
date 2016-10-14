@@ -1,53 +1,54 @@
-body{
-  background-image: url("http://res.cloudinary.com/forgoroe/image/upload/v1476306118/wallpaper-1220195_ifcape.png");
-  background-attachment: fixed;
+body {
+    background-image: url("http://res.cloudinary.com/forgoroe/image/upload/v1476306118/wallpaper-1220195_ifcape.png");
+    background-attachment: fixed;
 }
 
-#poem{
-  border-radius: 3px;
-  background-color: black;
-  opacity: 0.6;
-  cursor: pointer;
+#poem {
+    border-radius: 3px;
+    background-color: black;
+    opacity: 0.6;
+    cursor: pointer;
 }
 
-h1, h2{
-  font-family: 'Oswald', sans-serif;
+h1, h2 {
+    font-family: 'Oswald', sans-serif;
 }
 
 h3, h4 {
-/*  background-color:black;
+    /*  background-color:black;
   border-radius:2px;
   z-index:0;
   opacity:0.7;*/
-  font-family: 'Quattrocento', serif;
-  color: black;
+    font-family: 'Quattrocento', serif;
+    color: black;
 }
 
-th{
-  color:#D5DDE5;;
-  background:#1b1e24;
-  border-bottom:4px solid #9ea7af;
-  border-right: 1px solid #343a45;
-  font-size:23px;
-  font-weight: 100;
-  padding:24px;
-  text-align:left;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  vertical-align:middle;
-  font-family: 'Quattrocento', serif;
-  font-size: 150%;
+th {
+    color: #D5DDE5;
+    ;
+    background: #1b1e24;
+    border-bottom: 4px solid #9ea7af;
+    border-right: 1px solid #343a45;
+    font-size: 23px;
+    font-weight: 100;
+    padding: 24px;
+    text-align: left;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    vertical-align: middle;
+    font-family: 'Quattrocento', serif;
+    font-size: 150%;
 }
 
-td{
-  font-family: 'Quattrocento', serif;
-  font-size: 150%;
+td {
+    font-family: 'Quattrocento', serif;
+    font-size: 150%;
 }
 
-p{
-  color: ivory;
-  font-family: 'Quattrocento', serif;
+p {
+    color: ivory;
+    font-family: 'Quattrocento', serif;
 }
 
-div.text-center{
-  font-style: italic;
+div.text-center {
+    font-style: italic;
 }
