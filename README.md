@@ -2,6 +2,8 @@
 
 Working on word counting and simple data visualization.
 
+![Preview:](http://res.cloudinary.com/forgoroe/image/upload/v1476444046/serve.php_drdqvv.png)
+
 ##Motivation
 
 I was inspired to make this small project after watching some interesting youtube videos about word counting.
