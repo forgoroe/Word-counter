@@ -2,7 +2,7 @@
 
 Working on word counting and simple data visualization.
 
-![Preview:](http://res.cloudinary.com/forgoroe/image/upload/v1476444046/serve.php_drdqvv.png)
+![Preview:](http://res.cloudinary.com/forgoroe/image/upload/v1476444119/previews/serve.php_drdqvv.png)
 
 ##Motivation
 
