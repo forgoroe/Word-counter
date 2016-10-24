@@ -14,7 +14,7 @@ Ideally I would like to expand its functionality further along the line.
 
 Download the project and open index.html in your browser to taste some of this mess.
 
-... Or simply check this [codepen](http://codepen.io/Forgoroe/full/ORwgyz/) or this [github preview](https://htmlpreview.github.io/?https://github.com/forgoroe/Word-counter/blob/master/html/index.html).
+... Or simply check this [codepen](http://codepen.io/Forgoroe/full/ORwgyz/) or this [github page](https://forgoroe.github.io/Word-counter/).
 
 ##Helpful links
 
