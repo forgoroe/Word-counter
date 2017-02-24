@@ -48,8 +48,6 @@ window.onload = function() {
         countCell.appendChild(count);
     };
 
-
-
     function countWords(textArg) {
         frequencyDictionary = {};
         keys = [];
@@ -100,9 +98,45 @@ window.onload = function() {
                 countCell.appendChild(count);
 
             }
+            constructChart(frequencyDictionary);
         }
 
     }
+
+    function constructChart(freqDictionary) {
+        var arrayForChart = [];
+        for (var prop in freqDictionary) {
+            arrayForChart.push({ 'word': prop, 'count': freqDictionary[prop] });
+        }
+        
+        arrayForChart.sort(function compare(a, b) {
+            var countA = a.count;
+            var countB = b.count;
+            return countB - countA;
+        });
+
+         console.log(arrayForChart);
+
+        AmCharts.makeChart("chartdiv", {
+            "type": "serial",
+            "rotate": true,
+            "dataProvider": arrayForChart,
+            "categoryField": "word",
+            "graphs": [{
+                "valueField": "count",
+                "type": "column",
+                "fillAlphas": 0.8,
+                "angle": 30,
+                "depth3D": 1
+            }],
+            "categoryAxis": {
+                "autoGridCount": false,
+                "gridCount": arrayForChart.length,
+                "gridPosition": "start",
+            }
+
+        });
+    };
 
     document.getElementById('poem').onclick = function() {
         var copiedText = '';

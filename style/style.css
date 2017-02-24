@@ -8,6 +8,8 @@ body {
     background-color: black;
     opacity: 0.6;
     cursor: pointer;
+    color: ivory;
+    font-family: 'Quattrocento', serif;
 }
 
 h1, h2 {
@@ -42,11 +44,6 @@ th {
 td {
     font-family: 'Quattrocento', serif;
     font-size: 150%;
-}
-
-p {
-    color: ivory;
-    font-family: 'Quattrocento', serif;
 }
 
 div.text-center {

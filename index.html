@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
     <script type='text/javascript' src='./js/script.js'></script>
+    <script src="amcharts/amcharts.js"></script>
+    <script src="amcharts/serial.js"></script>
 </head>
 
 <body>
@@ -18,7 +20,6 @@
             <div class="col-lg-12">
                 <h1>Ever-expanding word counter</h1>
             </div>
-
             <div class="col-lg-6">
                 <h4>Copy and paste the text you want to analyse, or choose a '.txt' file to upload: <h5><input type="file" accept="text/plain" onchange="openFile(event)" id="uploadedFile"></h5></h4>
                 <div>
@@ -31,25 +32,34 @@
                         <button type="button" class="btn btn-danger btn-block" id="empty">Empty</button>
                     </div>
                 </div>
-                <br><br>
+                <br>
+                <br>
             </div>
             <div class="col-lg-6 text-center" ;>
-                <h4><i class="fa fa-clipboard" aria-hidden="true"></i> Sample text, click to copy
-</h4>
+                <h4><i class="fa fa-clipboard" aria-hidden="true"></i> Sample text, click to copy</h4>
                 <div id="poem">
-                    <p>There is a place where the sidewalk ends<br /> And before the street begins,<br /> And there the grass grows soft and white,<br /> And there the sun burns crimson bright,<br /> And there the moon-bird rests from his flight<br /> To
-                        cool in the peppermint wind.</p>
-
-                    <p>Let us leave this place where the smoke blows black<br /> And the dark street winds and bends.<br /> Past the pits where the asphalt flowers grow<br /> We shall walk with a walk that is measured and slow,<br /> And watch where the
-                        chalk-white arrows go<br /> To the place where the sidewalk ends.</p>
-
-                    <p>Yes we'll walk with a walk that is measured and slow,<br /> And we'll go where the chalk-white arrows go,<br /> For the children, they mark, and the children, they know<br /> The place where the sidewalk ends.</p>
+                    <p>There is a place where the sidewalk ends
+                        <br /> And before the street begins,
+                        <br /> And there the grass grows soft and white,
+                        <br /> And there the sun burns crimson bright,
+                        <br /> And there the moon-bird rests from his flight
+                        <br /> To cool in the peppermint wind.</p>
+                    <p>Let us leave this place where the smoke blows black
+                        <br /> And the dark street winds and bends.
+                        <br /> Past the pits where the asphalt flowers grow
+                        <br /> We shall walk with a walk that is measured and slow,
+                        <br /> And watch where the chalk-white arrows go
+                        <br /> To the place where the sidewalk ends.</p>
+                    <p>Yes we'll walk with a walk that is measured and slow,
+                        <br /> And we'll go where the chalk-white arrows go,
+                        <br /> For the children, they mark, and the children, they know
+                        <br /> The place where the sidewalk ends.</p>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 offset-lg-6">
+                <div class="col-lg-6">
                     <h2>Word count results</h2>
                     <h4>List of words and number of times they appeared in your text:</h4>
                     <table class="table table-hover">
@@ -66,6 +76,12 @@
                             </tr>
                         </tbody>
                     </table>
+                </div>
+                <div class="col-lg-6">
+                    <h2>Word Chart</h2>
+                    <h4>Visual representation of word count by AMCHARTS</h4>
+                    <div id="chartdiv" style="width: 640px; height: 700px;">
+                    </div>
                 </div>
             </div>
         </div>
