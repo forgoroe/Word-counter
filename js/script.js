@@ -2,6 +2,7 @@ var text;
 var keys = [];
 var frequencyDictionary = {};
 var poemText;
+var chartEntry;
 
 window.onload = function() {
 
@@ -33,6 +34,11 @@ window.onload = function() {
             listCountDiv.removeChild(listCountDiv.firstChild);
         }
 
+        var chartElements = document.getElementById("chartStuff");
+        while (chartElements.firstChild) {
+            chartElements.removeChild(chartElements.firstChild);
+        }
+
         var tableBody = document.getElementById('listCount');
         var tableRow = document.createElement('tr');
         var wordCell = document.createElement('td');
@@ -46,14 +52,32 @@ window.onload = function() {
         tableRow.appendChild(countCell);
         wordCell.appendChild(word);
         countCell.appendChild(count);
+
+        var chartStuffDiv = document.getElementById('chartStuff');
+        var chartTitle = document.createElement('h2');
+        var chartSubtitle = document.createElement('h4');
+        var chartDiv = document.createElement('div');
+        chartDiv.setAttribute('id', 'chartdiv');
+        chartDiv.style.width = '640px';
+        chartDiv.style.height = '700px';
+
+        var chartTitleText = document.createTextNode('Word Chart');
+        var chartSubtitleText = document.createTextNode('Visual representation of word count by amCharts');
+
+        chartStuffDiv.appendChild(chartTitle);
+        chartTitle.appendChild(chartTitleText);
+        chartStuffDiv.appendChild(chartSubtitle);
+        chartSubtitle.appendChild(chartSubtitleText);
+        chartStuffDiv.appendChild(chartDiv);
+
+        chartStuffDiv.style.visibility = 'hidden';
     };
 
     function countWords(textArg) {
         frequencyDictionary = {};
         keys = [];
         var textArray;
-        textArray = textArg.split(/\W+/);
-
+        textArray = textArg.split(/\W+/g);
         for (var i = 0; i < textArray.length; i++) {
             var word = textArray[i];
             if (frequencyDictionary[word]) {
@@ -69,6 +93,7 @@ window.onload = function() {
             var countB = frequencyDictionary[b];
             return countB - countA;
         });
+
     }
 
     function printResults() {
@@ -78,6 +103,8 @@ window.onload = function() {
             while (listCountDiv.firstChild) {
                 listCountDiv.removeChild(listCountDiv.firstChild);
             }
+
+
 
             for (var i = 0; i < keys.length; i++) {
                 var key = keys[i];
@@ -108,14 +135,12 @@ window.onload = function() {
         for (var prop in freqDictionary) {
             arrayForChart.push({ 'word': prop, 'count': freqDictionary[prop] });
         }
-        
+
         arrayForChart.sort(function compare(a, b) {
             var countA = a.count;
             var countB = b.count;
             return countB - countA;
         });
-
-         console.log(arrayForChart);
 
         AmCharts.makeChart("chartdiv", {
             "type": "serial",
@@ -127,7 +152,7 @@ window.onload = function() {
                 "type": "column",
                 "fillAlphas": 0.8,
                 "angle": 30,
-                "depth3D": 1
+                //"depth3D": 1
             }],
             "categoryAxis": {
                 "autoGridCount": false,
@@ -136,7 +161,12 @@ window.onload = function() {
             }
 
         });
-    };
+
+        var divsToShow = document.getElementById("chartStuff");
+
+        divsToShow.style.visibility = "visible";
+
+    }
 
     document.getElementById('poem').onclick = function() {
         var copiedText = '';

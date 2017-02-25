@@ -12,11 +12,18 @@ body {
     font-family: 'Quattrocento', serif;
 }
 
-h1, h2 {
+#chartStuff {
+    text-align: center;
+    visibility: hidden;
+}
+
+h1,
+h2 {
     font-family: 'Oswald', sans-serif;
 }
 
-h3, h4 {
+h3,
+h4 {
     /*  background-color:black;
   border-radius:2px;
   z-index:0;
